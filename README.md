@@ -24,7 +24,45 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+----------------------RUS----------------------
+Чтобы начать работу с приложением необходимо:
+1) Склонировать приложение
+2) Запустить его.
+
+В проекте описана документация SWAGGER, которая доступна по адресу: 
+
+```bash
+$ http://localhost:9999/api/docs/#/
+```
+
+Там вы найдете все схемы, необохимые для работы приложения.
+Порядок действий:
+
+1) Создание заказчика
+2) Отправка запроса на апи для генерации чека
+
+Приятного пользования))
+
+
+----------------------ENG----------------------
+To get started with the application, you need:
+1) Clone the app
+2) Run it.
+
+The project describes the SWAGGER documentation, which is available at:
+
+```bash
+$ http://localhost:9999/api/docs/#/
+```
+
+There you will find all the circuits required for the application to work.
+Procedure:
+
+1) Create a customer
+2) Sending a request to api to generate a receipt
+
+Enjoy using))
 
 ## Installation
 
