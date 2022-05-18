@@ -1,11 +1,8 @@
 import {sumWorks} from "../../tools/sumPricesFunc";
 
-export const pdfTemplate = ({workList}) => {
+export const pdfTemplate = ({workList}, fullName, companyName, id) => {
     const today = new Date();
-    let num = 0
     const entries = Object.entries(workList)
-
-    console.log(workList)
 
     return `
 <!DOCTYPE html>
@@ -210,15 +207,14 @@ background-color: #323149 !important;;
 								<div class="col-sm-6">
 									<div class="invoice-top-left">
 										<h2>Margaret Brick</h2>
-										<h4>Invoice № ${num++}</h4>
+										<h4>Invoice № ${id}</h4>
 										<h6>Date: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}`}</h6>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="invoice-top-right">
-										<h2>Customer</h2>
-										<h3>Hp Solutions</h3>
-										<h5>Delhi, India</h5>
+										<h2>${fullName}</h2>
+										<h3>${companyName}</h3>
 									</div>
 								</div>
 							</div>

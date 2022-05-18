@@ -5,6 +5,7 @@ import {InvoiceFullInfo} from "./invoice-customers.model";
 
 
 interface InvoiceCreationAttrs {
+    email: string,
     workList: object;
 }
 
@@ -15,9 +16,9 @@ export class Invoice extends Model<Invoice, InvoiceCreationAttrs> {
     @Column({type: DataType.INTEGER, unique: true, primaryKey: true, autoIncrement: true})
     id: number;
 
-    // @ApiProperty({example: 'someaddress@something.com', description: 'Customer email'})
-    // @Column({type: DataType.STRING, unique: true, allowNull: false})
-    // email: string;
+    @ApiProperty({example: 'someaddress@something.com', description: 'Customer email'})
+    @Column({type: DataType.STRING, allowNull: false})
+    email: string;
 
     @ApiProperty({example: '{work1: 45, work2: 79, work3: 367, etc..}', description: 'List of works with prices'})
     @Column({type: DataType.JSON, allowNull: false})

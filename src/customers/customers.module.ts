@@ -11,6 +11,7 @@ import {InvoiceFullInfo} from "../invoice/invoice-customers.model";
   providers: [CustomersService],
   imports: [
       SequelizeModule.forFeature([Customer, Invoice, InvoiceFullInfo])
-  ]
+  ],
+    exports: [CustomersService]
 })
 export class CustomersModule {}
