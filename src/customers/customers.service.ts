@@ -6,17 +6,13 @@ import {CreateCustomerDto} from "./dto/create-customer.dto";
 @Injectable()
 export class CustomersService {
 
-    constructor(@InjectModel(Customer) private cutomerRepository: typeof Customer) {
-
-    }
+    constructor(@InjectModel(Customer) private customerRepository: typeof Customer) {}
 
     async createCustomer(dto: CreateCustomerDto) {
-        const customer = await this.cutomerRepository.create(dto);
-        return customer
+         return await this.customerRepository.create(dto);
     }
 
     async getAllCustomers() {
-        const customers = await this.cutomerRepository.findAll();
-        return customers
+        return await this.customerRepository.findAll();
     }
 }
