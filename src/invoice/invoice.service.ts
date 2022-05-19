@@ -31,7 +31,7 @@ export class InvoiceService {
                     text: `Hello, ${candidate.fullName}, that's your invoice, check out and pay pls :)`,
                     attachments: {
                         filename: 'invoice.pdf',
-                        path: '/Users/aleksandrovila/Desktop/Pdf-Invoice-Mail/invoice.pdf'
+                        path: 'invoice.pdf'
                     }
                 }
                 mailer(message)
