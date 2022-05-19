@@ -5,4 +5,7 @@ export class CreateCustomerDto {
     readonly email: string;
     @ApiProperty({example: 'John Cena', description: 'Customer name'})
     readonly fullName: string;
+    @ApiProperty({example: 'Google', description: 'Customer company name'})
+    readonly companyName: string;
+
 }

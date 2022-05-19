@@ -1,4 +1,4 @@
-import {Injectable, Req, Res} from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import {CreateInvoiceDto} from "./dto/create-invoice.dto";
 import {InjectModel} from "@nestjs/sequelize";
 import {Invoice} from "./invoice.model";
@@ -15,6 +15,7 @@ export class InvoiceService {
     constructor(@InjectModel(Invoice) private invoiceRepository: typeof Invoice,
                 private customersService: CustomersService) {}
 
+
     async generateInvoice(dto: CreateInvoiceDto, req, res) {
         const candidate = await this.customersService.getCustomerByEmail(req.body.email)
         if(candidate) {
@@ -25,7 +26,7 @@ export class InvoiceService {
                     res.send(Promise.reject());
                 }
                 const message = {
-                    to: req.body.email,
+                    to: candidate.email,
                     subject: 'Your invoice, pls pay',
                     text: `Hello, ${candidate.fullName}, that's your invoice, check out and pay pls :)`,
                     attachments: {

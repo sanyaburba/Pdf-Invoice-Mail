@@ -18,6 +18,5 @@ export class CustomersService {
 
     async getCustomerByEmail(email:string) {
         return await this.customerRepository.findOne({where: {email}, include: {all: true}});
-
     }
 }

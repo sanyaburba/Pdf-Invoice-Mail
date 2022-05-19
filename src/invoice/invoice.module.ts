@@ -13,6 +13,7 @@ import {CustomersModule} from "../customers/customers.module";
   imports: [
     SequelizeModule.forFeature([Invoice, Customer, InvoiceFullInfo]),
       CustomersModule
-  ]
+  ],
+  exports: [InvoiceService]
 })
 export class InvoiceModule {}
