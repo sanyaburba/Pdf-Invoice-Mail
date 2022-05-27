@@ -1,14 +1,13 @@
-version: '3'
+version: '3.0'
 
 services:
   redis:
     image: redis:latest
-    volumes:
-      - data:/data
     ports:
       - 6379:6379
   main:
     container_name: main
+    network_mode: host
     build:
       context: .
     env_file:
@@ -19,12 +18,10 @@ services:
     ports:
       - 5555:5555
       - 9229:9229
-#    command:
-#      - npm run start:dev
+    command: npm run start:dev
     depends_on:
       - postgres
     restart: always
-
   postgres:
     container_name: postgres
     image: postgres:13
@@ -37,5 +34,6 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: always
+
 volumes:
   pgdata:
