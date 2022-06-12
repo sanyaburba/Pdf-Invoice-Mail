@@ -33,10 +33,10 @@
 В проекте описана документация SWAGGER, которая доступна по адресу: 
 
 ```bash
-$ http://localhost:9999/api/docs/#/
+$ http://localhost:${PORT}/api/docs/#/
 ```
 
-Там вы найдете все схемы, необохимые для работы приложения.
+Там вы найдете все схемы, необходимые для работы приложения.
 Порядок действий:
 
 1) Создание заказчика
@@ -53,7 +53,7 @@ To get started with the application, you need:
 The project describes the SWAGGER documentation, which is available at:
 
 ```bash
-$ http://localhost:9999/api/docs/#/
+$ http://localhost:${PORT}/api/docs/#/
 ```
 
 There you will find all the circuits required for the application to work.
